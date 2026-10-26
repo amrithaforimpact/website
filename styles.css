@@ -195,3 +195,8 @@ blockquote footer { font-family: var(--ui); font-size: .95rem; color: var(--mute
 .meet-text { display: grid; gap: 16px; max-width: 36em; }
 .meet-quote { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; text-transform: uppercase; }
 @media (max-width: 720px) { .meet .wrap { grid-template-columns: 1fr; } .meet-img { max-width: 300px; } }
+.lessons { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.lessons li { border-top: 3px solid var(--saffron); padding-top: 16px; color: var(--muted); min-width: 0; }
+.lessons strong { display: block; font-family: var(--display); font-size: 1.55rem; line-height: 1.15; color: var(--ink); margin-bottom: 10px; }
+.lesson { max-width: none; }
+@media (max-width: 820px) { .lessons { grid-template-columns: 1fr; } }
