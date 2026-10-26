@@ -175,3 +175,23 @@ blockquote footer { font-family: var(--ui); font-size: .95rem; color: var(--mute
 .impact span { color: var(--muted); font-family: var(--ui); font-size: .95rem; }
 @media (max-width: 960px) { .impact { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .impact { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.hero-img { width: 100%; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; border-radius: var(--radius); }
+.side-fig, .inline-fig { margin: 0; display: grid; gap: 10px; }
+.side-fig img { border-radius: var(--radius); width: 100%; }
+.side-fig figcaption, .inline-fig figcaption { font-family: var(--ui); font-size: .88rem; color: #aeb8c1; }
+.inline-fig { margin-top: 8px; max-width: 320px; }
+.inline-fig img { border-radius: var(--radius); width: 100%; }
+/* Hero v2: single column, small portrait */
+.hero .wrap { display: block; }
+.hero-text { max-width: 860px; }
+.hero-id { display: flex; align-items: center; gap: 18px; }
+.avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: center 25%; flex: none; }
+.hero-name { font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1.1; margin-bottom: 4px; }
+/* Hero v3: words first, then a "meet" band with the portrait */
+.hero { padding-bottom: clamp(40px, 6vw, 64px); }
+.meet { background: var(--mist); padding-block: clamp(48px, 7vw, 80px); }
+.meet .wrap { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.meet-img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; border-radius: var(--radius); }
+.meet-text { display: grid; gap: 16px; max-width: 36em; }
+.meet-quote { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; text-transform: uppercase; }
+@media (max-width: 720px) { .meet .wrap { grid-template-columns: 1fr; } .meet-img { max-width: 300px; } }
