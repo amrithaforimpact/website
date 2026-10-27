@@ -265,3 +265,23 @@ blockquote footer { font-family: var(--ui); font-size: .95rem; color: var(--mute
 
 /* Photo band on the home page: plain white */
 .meet { background: #ffffff; }
+
+/* Header v2: AM monogram, big two-tone name, bold menu, Contact button */
+.site-header { border-bottom: 4px solid var(--accent); }
+.site-header .wrap { padding-block: 18px; }
+.brand { display: flex; align-items: center; gap: 14px; font-family: var(--display); font-weight: 800; font-size: 2.4rem; line-height: 1; text-transform: uppercase; letter-spacing: .03em; color: var(--ink); }
+.brand-accent { color: var(--accent); }
+.mono { display: grid; place-items: center; flex: none; width: 54px; height: 54px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 1.5rem; letter-spacing: .02em; }
+.nav { font-size: 1.15rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; gap: 8px 32px; align-items: center; }
+.nav a:hover { border-bottom-color: var(--accent); }
+.nav a:last-child { background: var(--accent); color: #fff; padding: 10px 22px; border-radius: 999px; border-bottom: 0; }
+.nav a:last-child:hover { background: var(--deep); color: #fff; }
+@media (max-width: 720px) {
+  .brand { font-size: 1.6rem; gap: 10px; }
+  .mono { width: 40px; height: 40px; font-size: 1.1rem; }
+  .nav { font-size: .95rem; gap: 8px 20px; }
+  .nav a:last-child { padding: 8px 16px; }
+}
+
+/* Bigger greeting next to the photo */
+.meet .hi { font-family: var(--display); font-weight: 700; font-size: 2rem; line-height: 1; color: var(--accent); letter-spacing: .01em; }
