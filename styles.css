@@ -95,6 +95,7 @@ section { padding-block: clamp(56px, 8vw, 96px); }
 
 /* Card grids */
 .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; max-width: 820px; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
 .card { display: grid; gap: 14px; align-content: start; text-decoration: none; min-width: 0; }
 .card h3 { font-size: 1.65rem; }
@@ -160,7 +161,7 @@ blockquote footer { font-family: var(--ui); font-size: .95rem; color: var(--mute
 }
 @media (max-width: 820px) {
   .hero .wrap, .feature, .kora .wrap, .contact .wrap, .story-hero .wrap { grid-template-columns: 1fr; }
-  .grid-3, .quotes { grid-template-columns: 1fr; }
+  .grid-3, .grid-2, .quotes { grid-template-columns: 1fr; }
   .hero .ph { max-width: 420px; }
 }
 @media (max-width: 560px) {
@@ -202,3 +203,65 @@ blockquote footer { font-family: var(--ui); font-size: .95rem; color: var(--mute
 @media (max-width: 820px) { .lessons { grid-template-columns: 1fr; } }
 .lead-line { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.15; color: var(--slate-ink); }
 .story-body strong { font-family: var(--display); font-size: 1.45rem; color: var(--slate-ink); letter-spacing: .01em; }
+
+/* ---- v5: ocean theme; story pages with images in the text ---- */
+:root {
+  --tint: #e9f5f5;      /* soft sea-glass, from the turquoise water */
+  --deep: #0b4f5f;      /* deep ocean: contact + footer */
+  --accent: #0a8f99;    /* turquoise: buttons */
+  --saffron: #0b7f89;   /* small labels now turquoise */
+  --head-ink: #1f2a33;
+  --sand-veil: 244, 239, 231;
+}
+.tint { background: var(--tint); }
+.band { background: var(--deep); }
+.band .eyebrow { color: #8fe0e4; }
+.band .btn-solid, .band .btn-solid:hover { color: var(--deep); }
+.site-footer { background: var(--deep); border-top-color: rgba(255,255,255,.12); color: rgba(255,255,255,.75); }
+.contact-links a { border-bottom-color: rgba(255,255,255,.4); }
+.contact-links a:hover { border-bottom-color: #8fe0e4; }
+.contact p { color: rgba(255,255,255,.82) !important; }
+.btn-solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-solid:hover { background: var(--deep); border-color: var(--deep); }
+.more:hover { color: var(--accent); }
+
+/* Ocean hero on the home page: text sits on the sand */
+.hero {
+  background:
+    linear-gradient(90deg, rgba(var(--sand-veil), .94) 0%, rgba(var(--sand-veil), .80) 36%, rgba(var(--sand-veil), 0) 62%),
+    url("ocean-hero.jpg") left center / cover no-repeat;
+  padding-block: clamp(72px, 10vw, 140px);
+}
+.hero-text { max-width: 620px; }
+
+/* Story and bio pages */
+.story-col { max-width: 800px; }
+.story-head {
+  background: url("ocean-band.jpg") left center / cover no-repeat;
+  padding-block: clamp(56px, 8vw, 110px);
+}
+.story-head .wrap { display: grid; }
+.story-head .story-panel {
+  background: rgba(255, 255, 255, .92); border-radius: var(--radius);
+  padding: clamp(24px, 4vw, 40px); display: grid; gap: 12px;
+  box-shadow: 0 10px 30px rgba(11, 79, 95, .18);
+}
+.story-head h1 { text-transform: uppercase; font-size: clamp(2.2rem, 4.8vw, 3.4rem); line-height: 1.02; color: var(--head-ink); }
+.story-main { padding-block: clamp(36px, 5vw, 56px); }
+.story-main .story-body { max-width: none; gap: 20px; }
+.story-main .story-body p { color: var(--ink); font-size: 1.12rem; line-height: 1.7; }
+.story-main .lead-line, .story-main .story-body strong { color: var(--head-ink); }
+.body-fig { margin: 14px 0; }
+.body-fig img { display: block; width: 100%; max-height: 540px; object-fit: cover; border-radius: var(--radius); }
+.lessons li { border-top-color: var(--accent); }
+
+@media (max-width: 720px) {
+  .hero {
+    background:
+      linear-gradient(rgba(var(--sand-veil), .86), rgba(var(--sand-veil), .86)),
+      url("ocean-hero.jpg") 30% center / cover no-repeat;
+  }
+}
+
+/* Photo band on the home page: plain white */
+.meet { background: #ffffff; }
