@@ -315,3 +315,7 @@ blockquote footer { font-family: var(--ui); font-size: .95rem; color: var(--mute
 .bring li { font-size: 1.02rem; line-height: 1.6; }
 .bring strong { font-size: 1.6rem; }
 @media (max-width: 720px) { .bring { grid-template-columns: 1fr; } }
+
+/* v18 */
+.hero .eyebrow { line-height: 1.7; }
+.kora-note { font-family: var(--ui); font-size: .92rem; color: var(--muted); margin: 0; }
